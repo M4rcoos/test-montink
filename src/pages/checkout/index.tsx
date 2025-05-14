@@ -143,7 +143,7 @@ export const Checkout = () => {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-md bg-yellow-dark py-2 text-black"
+                className="w-full bg-blue-600 px-4 py-3 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md"
                 onClick={() => navigate("/orderConfirmed")}
               >
                 CONFIRMAR PEDIDO
