@@ -1,54 +1,81 @@
-# React + TypeScript + Vite
+# 🛒 Projeto - Página de Produto com Checkout
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto simula a experiência de compra de um produto em um e-commerce, desde a visualização do item até a finalização do pedido. Ele foi desenvolvido com foco em usabilidade, persistência de dados no navegador e integração com API externa de CEP.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✅ Funcionalidades
 
-## Expanding the ESLint configuration
+- **Imagens do Produto**
+  - Uma imagem principal que ocupa cerca de **35% da tela**.
+  - Abaixo da imagem principal, miniaturas com as demais imagens.
+  - Ao **clicar em uma miniatura**, a imagem principal é atualizada dinamicamente.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Informações do Produto**
+  - Título e preço exibidos em destaque.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Seletores Dinâmicos**
+  - Seleção de **cor** e **tamanho**.
+  - Os campos são gerados **dinamicamente a partir de arrays**, garantindo flexibilidade e manutenção fácil.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Disponibilidade de Entrega**
+  - Campo para digitação de **CEP**.
+  - O CEP é consultado pela API pública: [viacep.com.br](https://viacep.com.br/)
+  - Ao digitar um CEP válido, o endereço completo é exibido.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Persistência Local**
+  - Todas as interações do usuário (cor, tamanho, produtos no carrinho) são salvas no `localStorage`.
+  - Os dados permanecem salvos por **15 minutos**, mesmo que a página seja atualizada.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🖼️ Prints do Projeto
+
+### Página do Produto
+
+> Escolha de variantes de cor e tamanho com imagens dinâmicas
+
+![Print Página do Produto](./src/assets/print-index.png)
+
+---
+
+### Checkout - Sem CEP
+
+> Tela inicial do checkout com produtos adicionados
+
+![Print Checkout 1](./src/assets/print-checkout-1.png)
+
+---
+
+### Checkout - Com CEP preenchido
+
+> Exemplo após preenchimento e consulta de CEP
+
+![Print Checkout 2](./src/assets/print-checkout-2.png)
+
+---
+
+### Pedido Confirmado
+
+> Tela final após confirmação do pedido
+
+![Print Pedido Confirmado](./src/assets/order-confirmed.png)
+
+---
+
+## 🧪 Tecnologias Usadas
+
+- **React + TypeScript**
+- **React Router DOM**
+- **TailwindCSS**
+- **React Hook Form**
+- **Taq stack + fetch** para requisições 
+- **API ViaCEP** para consulta de endereço
+
+---
+
+## 🚀 Como executar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
